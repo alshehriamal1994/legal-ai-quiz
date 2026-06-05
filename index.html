@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Can you read the law like my AI? — Amal Alshehri</title>
+<title>Legal Entailment — A Self-Test · Amal Alshehri</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
@@ -10,93 +10,92 @@
   :root{--purple:#68246D;--dpurple:#4A1750;--gold:#C8A415;--ink:#23202a;--paper:#FAF8FB;
     --tint:#F3EEF4;--line:#E2D7E6;--green:#2e7d32;--red:#b3463f;--soft:#6a5a6d;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;}
   .wrap{max-width:700px;margin:0 auto;padding:22px 18px 70px;}
-  header{background:linear-gradient(135deg,var(--purple),var(--dpurple));color:#fff;border-radius:18px;padding:26px 24px;margin-bottom:18px;}
+  header{background:linear-gradient(135deg,var(--purple),var(--dpurple));color:#fff;border-radius:16px;padding:24px 24px;margin-bottom:18px;}
   header .k{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold);}
-  header h1{font-family:'Source Serif 4',Georgia,serif;font-size:30px;line-height:1.1;margin:8px 0 6px;}
-  header p{font-size:15px;color:#eaddec;} header p b{color:#fff;}
-  .intro{background:#fff;border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:14px;padding:15px 18px;margin-bottom:20px;font-size:14.5px;}
-  .intro b{color:var(--purple);}
-  .q{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:18px;box-shadow:0 6px 18px rgba(74,23,80,.06);}
-  .qhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
-  .qn{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);}
-  .diff{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:20px;}
-  .diff.med{background:var(--tint);color:var(--purple);} .diff.hard{background:#f7e3e2;color:var(--red);} .diff.brutal{background:#4A1750;color:#fff;}
-  .lbl{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--purple);margin-bottom:5px;}
-  .note{font-size:13px;color:var(--soft);background:#faf6fb;border:1px dashed var(--line);border-radius:10px;padding:9px 12px;margin-bottom:11px;}
-  .note b{color:var(--dpurple);}
-  .law{background:var(--tint);border-radius:11px;padding:12px 15px;font-size:15px;margin-bottom:13px;}
-  .stmt{border:2px solid var(--dpurple);border-radius:11px;padding:12px 15px;font-size:16.5px;font-weight:600;margin-bottom:6px;}
-  .ask{font-size:14.5px;color:var(--dpurple);font-weight:700;margin:10px 0 12px;}
+  header h1{font-family:'Source Serif 4',Georgia,serif;font-size:27px;line-height:1.14;margin:8px 0 8px;font-weight:700;}
+  header p{font-size:14.5px;color:#eddfee;}
+  .intro{background:#fff;border:1px solid var(--line);border-left:5px solid var(--purple);border-radius:12px;padding:14px 18px;margin-bottom:22px;font-size:14px;color:var(--ink);}
+  .q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:18px;box-shadow:0 5px 16px rgba(74,23,80,.05);}
+  .qn{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--soft);margin-bottom:11px;}
+  .lbl{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--purple);margin-bottom:5px;}
+  .note{font-size:13.5px;color:var(--soft);background:#faf6fb;border:1px solid var(--line);border-radius:9px;padding:10px 13px;margin-bottom:12px;}
+  .law{background:var(--tint);border-radius:10px;padding:12px 15px;font-size:14.5px;margin-bottom:14px;}
+  .stmt{border:1px solid var(--dpurple);border-radius:10px;padding:12px 15px;font-size:15.5px;font-weight:400;margin-bottom:4px;}
+  .ask{font-size:14px;color:var(--dpurple);font-weight:600;margin:11px 0 12px;}
   .btns{display:flex;gap:10px;}
-  .btn{flex:1;padding:14px;border:2px solid var(--purple);background:#fff;color:var(--purple);font-weight:800;font-size:16px;border-radius:12px;cursor:pointer;font-family:inherit;transition:.12s;}
+  .btn{flex:1;padding:13px;border:1.5px solid var(--purple);background:#fff;color:var(--purple);font-weight:600;font-size:15.5px;border-radius:10px;cursor:pointer;font-family:inherit;transition:.12s;}
   .btn:hover{background:var(--tint);} .btn:disabled{cursor:default;}
-  .reveal{margin-top:14px;border-top:1px dashed var(--line);padding-top:14px;display:none;}
+  .reveal{margin-top:14px;border-top:1px solid var(--line);padding-top:14px;display:none;}
   .reveal.show{display:block;}
-  .you{font-size:16px;font-weight:800;margin-bottom:8px;}
+  .you{font-size:15px;font-weight:700;margin-bottom:9px;}
   .you.right{color:var(--green);} .you.wrong{color:var(--red);}
-  .ans{display:flex;gap:10px;flex-wrap:wrap;}
-  .pill{font-size:14px;font-weight:700;padding:7px 12px;border-radius:9px;}
-  .pill.correct{background:#eef7ee;color:var(--green);border:1px solid #bfe0c0;}
+  .ans{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:9px;}
+  .pill{font-size:13.5px;font-weight:600;padding:6px 12px;border-radius:8px;}
+  .pill.correct{background:#eef7ee;color:var(--green);border:1px solid #cfe6cf;}
   .pill.ai{background:var(--tint);color:var(--dpurple);border:1px solid var(--line);}
-  .why{font-size:13.5px;color:var(--soft);margin-top:9px;} .why b{color:var(--purple);}
-  .score{position:sticky;bottom:12px;background:var(--dpurple);color:#fff;border-radius:12px;padding:11px 16px;text-align:center;font-weight:700;margin-top:10px;box-shadow:0 6px 18px rgba(0,0,0,.2);}
-  .score b{color:var(--gold);}
-  footer{text-align:center;font-size:13px;color:var(--soft);margin-top:24px;line-height:1.5;}
-  footer b{color:var(--dpurple);} footer a{color:var(--purple);}
+  .why{font-size:13.5px;color:var(--ink);} .why .ref{color:var(--purple);font-weight:600;}
+  .score{position:sticky;bottom:12px;background:var(--dpurple);color:#fff;border-radius:11px;padding:11px 16px;text-align:center;font-weight:600;margin-top:10px;box-shadow:0 5px 16px rgba(0,0,0,.18);}
+  .score b{color:var(--gold);font-weight:700;}
+  footer{text-align:center;font-size:13px;color:var(--soft);margin-top:24px;line-height:1.55;}
+  footer .nm{color:var(--dpurple);font-weight:600;} footer a{color:var(--purple);}
 </style></head>
 <body>
 <div class="wrap">
   <header>
     <div class="k">Open, Trustworthy AI for the Law</div>
-    <h1>Can you beat my AI at reading the law?</h1>
-    <p>Real Bar-Exam questions — and they're <b>traps.</b> The obvious answer is usually wrong. Read <b>the law</b>, read <b>the statement</b>: does it follow? <b>My AI got every one right.</b> Will you?</p>
+    <h1>Legal entailment: a self-test</h1>
+    <p>Each item is a real question from the Japanese Bar Examination, as used in the COLIEE 2026 evaluation. Read the statutory provision and the statement, then decide whether the statement is entailed by the provision.</p>
   </header>
-  <div class="intro">These are genuine <b>Japanese Bar Exam</b> questions from the COLIEE 2026 AI contest — chosen because they're <b>deliberately confusing.</b> One word, one hidden exception, flips the answer. My AI used <b>only open models anyone can check</b> — and still scored 1st in the world.</div>
+  <div class="intro">These items turn on precise reading of statutory exceptions and definitions. For each one, the answer returned by the system I developed for COLIEE 2026 — built entirely from open models — is shown alongside the correct answer. The system placed first internationally on this task.</div>
 
   <div id="quiz"></div>
-  <div class="score" id="score">You: <b><span id="sc">0</span> / 4</b> &nbsp;·&nbsp; My AI: <b>4 / 4</b></div>
+  <div class="score" id="score">Your score: <b><span id="sc">0</span> / 4</b> &nbsp;·&nbsp; My system: <b>4 / 4</b></div>
 
-  <footer><b>Amal Saad Alshehri</b> — PhD, Computer Science, Durham University<br>
-    Supervisors: Amir Atapour-Abarghouei &amp; Nelly Bencomo · 1st place, COLIEE 2026 (ICAIL, Singapore)<br>
-    <a href="https://alshehriamal1994.github.io/amal_saad_alshehri/">More of my research →</a></footer>
+  <footer><span class="nm">Amal Saad Alshehri</span> — PhD, Department of Computer Science, Durham University<br>
+    Supervisors: Amir Atapour-Abarghouei &amp; Nelly Bencomo · First place, COLIEE 2026 (ICAIL, Singapore)<br>
+    <a href="https://alshehriamal1994.github.io/amal_saad_alshehri/">Further research →</a></footer>
 </div>
 
 <script>
 const QS=[
- {diff:["med","Tricky"], law_t:"Civil Code, Arts. 724 & 724-2 — time limit",
-  law:"You normally have <b>3 years</b> to claim compensation for a wrongful act (from learning the harm and who caused it). <b>But for harm to a person's body, the limit is 5 years.</b>",
-  stmt:"&ldquo;A claim for a <b>bodily injury</b> is lost if it isn't made within <b>3 years.</b>&rdquo;",
-  correct:false, ai:false, why:"False — for injury to the body, Art. 724-2 makes it <b>5 years</b>, not 3. The single word &lsquo;body&rsquo; changes the deadline."},
+ {law_t:"Civil Code, Articles 724 and 724-2",
+  law:"A claim in tort is extinguished by prescription three years after the victim becomes aware of the damage and the wrongdoer. For a tort causing harm to a person's life or body, that period is five years.",
+  stmt:"&ldquo;A claim for damages for bodily injury is extinguished if it is not exercised within three years.&rdquo;",
+  correct:false, ai:false,
+  why:"Incorrect. <span class='ref'>Article 724-2</span> sets a five-year period where the tort causes personal injury; the three-year period applies to other torts."},
 
- {diff:["hard","Hard"], law_t:"Civil Code, Art. 97 — a notice that's blocked",
-  law:"A notice takes effect when it reaches the other party. If they block it without good reason, it is deemed to arrive <b>at the time it would NORMALLY have arrived.</b>",
-  stmt:"&ldquo;If the other party blocks the notice, it is deemed to arrive <b>at the moment they blocked it.</b>&rdquo;",
-  correct:false, ai:false, why:"False — the law uses the <b>normal arrival time</b>, not the moment of blocking. Sounds right; isn't."},
+ {law_t:"Civil Code, Article 97",
+  law:"A manifestation of intention takes effect when the notice reaches the other party. Where the other party, without justifiable grounds, obstructs the arrival of the notice, it is deemed to have arrived at the time it would ordinarily have arrived.",
+  stmt:"&ldquo;Where the other party obstructs the notice, it is deemed to have arrived at the time the obstruction occurred.&rdquo;",
+  correct:false, ai:false,
+  why:"Incorrect. <span class='ref'>Article 97(2)</span> deems arrival at the time the notice would ordinarily have arrived, not the moment of obstruction."},
 
- {diff:["brutal","Brutal"], note:"<b>Background:</b> Japanese law has two levels of protection — <b>guardianship</b> (for people who lack capacity) and the lighter <b>curatorship</b> (for partly-reduced capacity).",
-  law_t:"Civil Code, Art. 98-2 — who is protected",
-  law:"You cannot enforce a statement against someone who, when they received it, was a <b>minor or under guardianship.</b> (Curatorship is <b>not</b> on that list.)",
-  stmt:"&ldquo;Even if the recipient was under <b>curatorship</b>, the sender can still enforce the statement against them.&rdquo;",
-  correct:true, ai:true, why:"True — Art. 98-2 protects minors and people under guardianship, <b>but not</b> those under the lighter curatorship. Almost everyone assumes it's protected. It isn't."},
+ {note:"Japanese law distinguishes guardianship, for persons who lack the capacity to discern right from wrong, from curatorship, a lesser protective status for persons whose capacity is only partly diminished.",
+  law_t:"Civil Code, Article 98-2",
+  law:"A manifestation of intention may not be asserted against a recipient who, at the time of receipt, lacked mental capacity, or was a minor or an adult ward under guardianship. Persons under curatorship are not included.",
+  stmt:"&ldquo;Even where the recipient was under curatorship at the time of receipt, the maker may assert the manifestation against them.&rdquo;",
+  correct:true, ai:true,
+  why:"Correct. <span class='ref'>Article 98-2</span> protects minors and adult wards under guardianship, but not persons under curatorship; the manifestation may therefore be asserted against them."},
 
- {diff:["brutal","Brutal"], note:"<b>Situation:</b> A signs a contract as B's agent — and A <b>knows</b> he has no authority to. The other party, C, didn't know.",
-  law_t:"Civil Code, Art. 117 — a trap inside a trap",
-  law:"An unauthorised agent escapes liability if the other party was <b>careless</b> in not realising — <b>but not if the agent himself knew</b> he had no authority.",
-  stmt:"&ldquo;Because C was careless in not realising, A bears no liability.&rdquo;",
-  correct:false, ai:false, why:"False — the &lsquo;careless other party&rsquo; excuse is <b>cancelled because A knew</b> he had no authority. A is still liable."},
+ {note:"Facts: A concluded a contract with C as B's agent without authority, knowing that he lacked it. C was unaware of the lack of authority.",
+  law_t:"Civil Code, Article 117",
+  law:"An unauthorised agent is not liable where the other party was negligent in failing to know of the lack of authority; this exemption does not apply, however, where the unauthorised agent knew that he lacked authority.",
+  stmt:"&ldquo;Because C was negligent in not knowing of the lack of authority, A bears no liability as an unauthorised agent.&rdquo;",
+  correct:false, ai:false,
+  why:"Incorrect. Under <span class='ref'>Article 117(2)</span> the exemption for the other party's negligence does not apply where the agent knew he lacked authority; A therefore remains liable."},
 ];
 let score=0;
 const box=document.getElementById('quiz');
 QS.forEach((q,i)=>{
   const el=document.createElement('div'); el.className='q';
-  el.innerHTML=`<div class="qhead"><span class="qn">Question ${i+1} of 4</span><span class="diff ${q.diff[0]}">${q.diff[1]}</span></div>
+  el.innerHTML=`<div class="qn">Question ${i+1} of 4</div>
     ${q.note?`<div class="note">${q.note}</div>`:''}
-    <div class="lbl">The law</div><div class="law"><b>${q.law_t}.</b> ${q.law}</div>
-    <div class="lbl">The statement</div><div class="stmt">${q.stmt}</div>
-    <div class="ask">Does this statement follow from the law above?</div>
-    <div class="btns"><button class="btn" data-v="true">TRUE</button><button class="btn" data-v="false">FALSE</button></div>
+    <div class="lbl">Provision</div><div class="law">${q.law_t}. ${q.law}</div>
+    <div class="lbl">Statement</div><div class="stmt">${q.stmt}</div>
+    <div class="ask">Is the statement entailed by the provision?</div>
+    <div class="btns"><button class="btn" data-v="true">True</button><button class="btn" data-v="false">False</button></div>
     <div class="reveal"><div class="you"></div>
       <div class="ans"><span class="pill correct"></span><span class="pill ai"></span></div>
       <div class="why">${q.why}</div></div>`;
@@ -106,10 +105,10 @@ QS.forEach((q,i)=>{
     btns.forEach(x=>{x.disabled=true;
       if(x.dataset.v===String(q.correct)){x.style.borderColor='#2e7d32';x.style.color='#2e7d32';x.style.background='#f1faf1';}
       if(x===b&&!right){x.style.borderColor='#b3463f';x.style.color='#b3463f';x.style.background='#fbf1f0';}});
-    you.textContent = right?'✓ Correct — you read it like a lawyer!':'✗ Got you — that was a trap.';
+    you.textContent = right?'Correct.':'Incorrect.';
     you.className='you '+(right?'right':'wrong');
-    el.querySelector('.pill.correct').textContent='Right answer: '+(q.correct?'TRUE':'FALSE');
-    el.querySelector('.pill.ai').textContent='My AI answered: '+(q.ai?'TRUE':'FALSE')+(q.ai===q.correct?' ✓':' ✗');
+    el.querySelector('.pill.correct').textContent='Correct answer: '+(q.correct?'True':'False');
+    el.querySelector('.pill.ai').textContent='My system answered: '+(q.ai?'True':'False')+(q.ai===q.correct?' (correct)':' (incorrect)');
     rev.classList.add('show');
     if(right){score++;document.getElementById('sc').textContent=score;}
   }));
