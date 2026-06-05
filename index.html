@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can you read the law like my AI? — Amal Alshehri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--purple:#68246D;--dpurple:#4A1750;--gold:#C8A415;--ink:#23202a;--paper:#FAF8FB;
+    --tint:#F3EEF4;--line:#E2D7E6;--green:#2e7d32;--red:#b3463f;--soft:#6a5a6d;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;}
+  .wrap{max-width:680px;margin:0 auto;padding:22px 18px 60px;}
+  header{background:linear-gradient(135deg,var(--purple),var(--dpurple));color:#fff;border-radius:18px;padding:26px 24px;margin-bottom:20px;}
+  header .k{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold);}
+  header h1{font-family:'Source Serif 4',Georgia,serif;font-size:30px;line-height:1.1;margin:8px 0 6px;}
+  header p{font-size:15px;color:#eaddec;}
+  header p b{color:#fff;}
+  .intro{background:#fff;border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:14px;padding:16px 18px;margin-bottom:22px;font-size:15px;}
+  .intro b{color:var(--purple);}
+  .q{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:18px;box-shadow:0 6px 18px rgba(74,23,80,.06);}
+  .qn{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .law{background:var(--tint);border-radius:11px;padding:13px 15px;font-size:14.5px;margin-bottom:12px;}
+  .law .lt{font-weight:800;color:var(--purple);font-size:12px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px;}
+  .claim{font-size:17px;font-weight:600;margin-bottom:4px;}
+  .ask{font-size:14px;color:var(--soft);margin-bottom:14px;}
+  .btns{display:flex;gap:10px;}
+  .btn{flex:1;padding:14px;border:2px solid var(--purple);background:#fff;color:var(--purple);font-weight:800;font-size:16px;
+    border-radius:12px;cursor:pointer;font-family:inherit;transition:.12s;}
+  .btn:hover{background:var(--tint);}
+  .btn:disabled{cursor:default;}
+  .reveal{margin-top:14px;border-top:1px dashed var(--line);padding-top:14px;display:none;}
+  .reveal.show{display:block;}
+  .you{font-size:16px;font-weight:800;margin-bottom:8px;}
+  .you.right{color:var(--green);}.you.wrong{color:var(--red);}
+  .ans{display:flex;gap:10px;flex-wrap:wrap;}
+  .pill{font-size:14px;font-weight:700;padding:7px 12px;border-radius:9px;}
+  .pill.correct{background:#eef7ee;color:var(--green);border:1px solid #bfe0c0;}
+  .pill.ai{background:var(--tint);color:var(--dpurple);border:1px solid var(--line);}
+  .why{font-size:13.5px;color:var(--soft);margin-top:9px;}
+  .why b{color:var(--purple);}
+  footer{text-align:center;font-size:13px;color:var(--soft);margin-top:26px;line-height:1.5;}
+  footer b{color:var(--dpurple);}
+  footer a{color:var(--purple);}
+  .score{position:sticky;bottom:12px;background:var(--dpurple);color:#fff;border-radius:12px;padding:11px 16px;
+    text-align:center;font-weight:700;margin-top:10px;box-shadow:0 6px 18px rgba(0,0,0,.2);}
+  .score b{color:var(--gold);}
+</style></head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="k">Open, Trustworthy AI for the Law</div>
+    <h1>Can you read the law like my AI?</h1>
+    <p>Here's the real game my AI won — <b>1st in the world.</b> You get the <b>law</b> and a <b>statement</b>. Does the statement follow from the law — <b>true</b> or <b>false?</b></p>
+  </header>
+
+  <div class="intro">These are <b>real questions from the Japanese Bar Exam</b>, used in an international AI contest (COLIEE 2026). Decide for yourself, then see the right answer — and what <b>my AI</b> said. It got all three right, using only open models anyone can check.</div>
+
+  <div id="quiz"></div>
+  <div class="score" id="score">Your score: <b><span id="sc">0</span> / 3</b> &nbsp;·&nbsp; My AI: <b>3 / 3</b></div>
+
+  <footer>
+    <b>Amal Saad Alshehri</b> — PhD, Computer Science, Durham University<br>
+    Supervisors: Amir Atapour-Abarghouei &amp; Nelly Bencomo · 1st place, COLIEE 2026 (ICAIL, Singapore)<br>
+    <a href="https://alshehriamal1994.github.io/amal_saad_alshehri/">More of my research →</a>
+  </footer>
+</div>
+
+<script>
+const QS=[
+ {law_t:"Civil Code, Article 7 — Commencement of guardianship",
+  law:"For a person who, because of a mental disorder, constantly lacks the capacity to tell right from wrong, the family court may order guardianship to begin — at the request of the person themselves, their spouse, a relative within the fourth degree, … <b>or a public prosecutor.</b>",
+  claim:"“A public prosecutor can ask the court to start guardianship for such a person.”",
+  correct:true, ai:true,
+  why:"True — Article 7 expressly lists a public prosecutor among those who may ask."},
+ {law_t:"Civil Code, Articles 30 & 31 — Disappearance",
+  law:"Art. 30: If it has been unclear for <b>7 years</b> whether an absent person is alive or dead, the family court may declare them a disappeared person. Art. 31: such a person is <b>deemed to have died</b> the moment the 7-year period ended.",
+  claim:"“If someone has been missing for 7 years and a declaration of disappearance is made, they are deemed to have died when the 7 years ran out.”",
+  correct:true, ai:true,
+  why:"True — Articles 30 and 31 set exactly this rule."},
+ {law_t:"Civil Code, Article 26 — Replacing the administrator",
+  law:"Where an absent person has appointed an administrator for their property, and it becomes unclear whether they are alive or dead, the family court <b>may replace</b> the administrator at the request of an interested person or a public prosecutor.",
+  claim:"“Once an absent person has appointed an administrator, even if they later go missing, an interested person CANNOT ask the court to replace the administrator.”",
+  correct:false, ai:false,
+  why:"False — Article 26 expressly lets an interested person ask for a replacement. (My AI spotted this too.)"},
+];
+let score=0, done=0;
+const box=document.getElementById('quiz');
+QS.forEach((q,i)=>{
+  const el=document.createElement('div'); el.className='q';
+  el.innerHTML=`<div class="qn">Question ${i+1} of 3</div>
+    <div class="law"><div class="lt">${q.law_t}</div>${q.law}</div>
+    <div class="claim">${q.claim}</div>
+    <div class="ask">Does this follow from the law?</div>
+    <div class="btns"><button class="btn" data-v="true">TRUE — it follows</button>
+    <button class="btn" data-v="false">FALSE — it doesn't</button></div>
+    <div class="reveal"><div class="you"></div>
+      <div class="ans"><span class="pill correct"></span><span class="pill ai"></span></div>
+      <div class="why">${q.why}</div></div>`;
+  const btns=el.querySelectorAll('.btn'), rev=el.querySelector('.reveal'), you=el.querySelector('.you');
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    const pick=b.dataset.v==='true', right=pick===q.correct;
+    btns.forEach(x=>{x.disabled=true;
+      if(x.dataset.v===String(q.correct)){x.style.borderColor='#2e7d32';x.style.color='#2e7d32';}
+      if(x===b&&!right){x.style.borderColor='#b3463f';x.style.color='#b3463f';}});
+    you.textContent = right?'✓ Correct — you read it like a lawyer!':'✗ Not quite.';
+    you.className='you '+(right?'right':'wrong');
+    el.querySelector('.pill.correct').textContent='Right answer: '+(q.correct?'TRUE':'FALSE');
+    el.querySelector('.pill.ai').textContent='🤖 My AI said: '+(q.ai?'TRUE':'FALSE')+(q.ai===q.correct?' ✓':' ✗');
+    rev.classList.add('show');
+    if(right) score++; done++; document.getElementById('sc').textContent=score;
+  }));
+  box.appendChild(el);
+});
+</script>
+</body></html>
